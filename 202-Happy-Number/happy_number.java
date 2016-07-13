@@ -1,4 +1,5 @@
 public class Solution {
+    // if there is a loop, return false
     public boolean isHappy(int n) {
         Set<Integer> set = new HashSet<Integer>();
         int remain = 0;
