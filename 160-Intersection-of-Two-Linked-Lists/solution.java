@@ -9,6 +9,9 @@
  *     }
  * }
  */
+ 
+ // 先分别算出两个list的长度，然后把长的移到和短的一样的位置，开始比较，
+ //如果剩下的部分相同就返回
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lenA = 0;
