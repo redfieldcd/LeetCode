@@ -13,13 +13,16 @@ public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lenA = 0;
         int lenB = 0;
-        while(headA != null) {
-            headA = headA.next;
+        
+        ListNode heada = headA;
+        ListNode headb = headB;
+        while(heada != null) {
+            heada = heada.next;
             lenA++;
         }
         
-        while(headB != null) {
-            headB = headB.next;
+        while(headb != null) {
+            headb = headb.next;
             lenB++;
         }
         
