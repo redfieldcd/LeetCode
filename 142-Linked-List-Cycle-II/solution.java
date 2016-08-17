@@ -10,16 +10,22 @@
  * }
  */
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
         while(fast != null && fast.next != null){
-            slow = slow.next;
             fast = fast.next.next;
+            slow = slow.next;
             if(fast == slow){
-                return true;
+                // 找相遇点
+                slow = head;
+                while(slow != fast){
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
             }
         }
-        return false;
+        return null;
     }
 }
