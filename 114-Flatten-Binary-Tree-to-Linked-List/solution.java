@@ -12,7 +12,7 @@
  // 栈内取出元素作为右子树
 public class Solution {
     public void flatten(TreeNode root) {
-        Stack<TreeNode> s = new Stack<TreeNode>()
+        Stack<TreeNode> s = new Stack<TreeNode>()；
         
         while(root != null && !s.isEmpty()) {
             if(root.right != null) {
