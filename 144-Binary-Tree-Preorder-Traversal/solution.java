@@ -54,14 +54,14 @@
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> list = new LinkedList<Integer>();
-        if(root == null) return list;
         traversal(root, list);
         return list;
     }
     
     public void traversal(TreeNode root, List<Integer> list) {
+        if(root == null) return;
         list.add(root.val);
         traversal(root.left, list);
-        traversal(root.right, right);
+        traversal(root.right, list);
     }
 }
