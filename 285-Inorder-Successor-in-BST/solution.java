@@ -31,7 +31,7 @@ public class Solution {
             }
             return curr;
         } else {
-            while(!s.isEmtpy() && s.peek().val < p.val) {
+            while(!s.isEmpty() && s.peek().val < p.val) {
                 s.pop();
             }
             return s.isEmpty() ? null: s.pop();
