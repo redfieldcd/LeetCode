@@ -12,8 +12,11 @@ public class Solution {
     List<String> list = new ArrayList<String>();
     
     public List<String> binaryTreePaths(TreeNode root) {
-        String s = "" + root.val;
-        if (root != null) findPaths(root, s);
+        
+        if (root != null){
+            String s = "" + root.val;
+            findPaths(root, s);
+        }
         
         return list;
     }
