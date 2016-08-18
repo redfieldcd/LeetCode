@@ -10,7 +10,7 @@
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new LinkedList<Integer>();
-        if(root == null) return root;
+        if(root == null) return;
         
         List<Integer> left = preorderTraversal(root.left);
         List<Integer> right = preorderTraversal(root.right);
