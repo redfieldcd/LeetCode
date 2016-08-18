@@ -26,25 +26,42 @@
 // }
 
 // iteration
+// public class Solution {
+//     public List<Integer> preorderTraversal(TreeNode root) {
+//         Stack<TreeNode> s = new Stack<TreeNode>();
+//         List<Integer> list = new LinkedList<Integer>();
+//         if(root == null) return list;
+//         s.push(root);
+        
+//         while(!s.isEmpty()) {
+//             TreeNode node = s.pop();
+//             if(node.right != null) {
+//                 s.push(node.right);
+//             }
+            
+//             if(node.left != null) {
+//                 s.push(node.left);
+//             }
+            
+//             list.add(node.val);
+//         }
+//         return list;
+//     }
+// }
+
+
+//recursion
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        Stack<TreeNode> s = new Stack<TreeNode>();
         List<Integer> list = new LinkedList<Integer>();
         if(root == null) return list;
-        s.push(root);
-        
-        while(!s.isEmpty()) {
-            TreeNode node = s.pop();
-            if(node.right != null) {
-                s.push(node.right);
-            }
-            
-            if(node.left != null) {
-                s.push(node.left);
-            }
-            
-            list.add(node.val);
-        }
+        traversal(root, list);
         return list;
+    }
+    
+    public void traversal(TreeNode root, List<Integer> list) {
+        list.add(root);
+        traversal(root.left, list);
+        traversal(root.right, right);
     }
 }
