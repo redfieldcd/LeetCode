@@ -7,18 +7,44 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+// Divide & Conquer
+// public class Solution {
+//     public List<Integer> preorderTraversal(TreeNode root) {
+//         List<Integer> res = new LinkedList<Integer>();
+//         if(root == null) return res;
+        
+//         List<Integer> left = preorderTraversal(root.left);
+//         List<Integer> right = preorderTraversal(root.right);
+        
+//         res.add(root.val);
+//         res.addAll(left);
+//         res.addAll(right);
+        
+//         return res;
+//     }
+// }
+
+// iteration
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> res = new LinkedList<Integer>();
-        if(root == null) return res;
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        List<Integer> list = new LinkedList<Integer>();
+        if(root == null) return list;
+        s.push(root);
         
-        List<Integer> left = preorderTraversal(root.left);
-        List<Integer> right = preorderTraversal(root.right);
-        
-        res.add(root.val);
-        res.addAll(left);
-        res.addAll(right);
-        
-        return res;
+        while(!s.isEmpty()) {
+            TreeNode node = s.pop();
+            if(node.right != null) {
+                s.push(node.right);
+            }
+            
+            if(node.left != null) {
+                s.push(node.left);
+            }
+            
+            list.add(node.val);
+        }
+        return list;
     }
 }
