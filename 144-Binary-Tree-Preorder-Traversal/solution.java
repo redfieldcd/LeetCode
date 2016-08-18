@@ -16,7 +16,9 @@ public class Solution {
         List<Integer> right = preorderTraversal(root.right);
         
         res.add(root.val);
-        res.addAll(root.left);
-        res.addAll(root.right);
+        res.addAll(left);
+        res.addAll(right);
+        
+        return res;
     }
 }
