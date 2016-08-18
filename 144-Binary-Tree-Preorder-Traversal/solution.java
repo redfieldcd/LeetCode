@@ -60,7 +60,7 @@ public class Solution {
     }
     
     public void traversal(TreeNode root, List<Integer> list) {
-        list.add(root);
+        list.add(root.val);
         traversal(root.left, list);
         traversal(root.right, right);
     }
