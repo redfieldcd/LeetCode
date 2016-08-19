@@ -15,7 +15,7 @@ public class Solution {
         return sum;
     }
     
-    publicc void getSum(TreeNode root) {
+    public void getSum(TreeNode root) {
         if(root.left == null && root.right == null) {
             sum += root.val;
         }
