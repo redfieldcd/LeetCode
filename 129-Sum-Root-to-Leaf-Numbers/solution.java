@@ -21,7 +21,7 @@ public class Solution {
         }
         
         if(root.left != null) {
-            root.left.val += root.val*10
+            root.left.val += root.val*10;
             getSum(root.left);
         }
         
