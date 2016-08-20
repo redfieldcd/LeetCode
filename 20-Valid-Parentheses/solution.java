@@ -30,12 +30,12 @@ public class Solution {
             } 
             
             if(s.charAt(i) == ')' || s.charAt(i) == ']' || s.charAt(i) == '}') {
-                if(s.isEmpty() || s.charAt(i) != map.get(stk.pop())) {
+                if(stk.isEmpty() || s.charAt(i) != map.get(stk.pop())) {
                     return false;
                 }
             }
         }
         
-        return true;
+        return stk.isEmpty();
     }
 }
