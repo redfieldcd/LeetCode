@@ -10,7 +10,7 @@ public class Solution {
         }
         
         for(int i = 0; i < nums2.length; i++) {
-            if(set.contains[nums2[i]]) {
+            if(set.contains(nums2[i])) {
                 interval.add(nums[i]);
             }
         }
