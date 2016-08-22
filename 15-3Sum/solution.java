@@ -4,26 +4,30 @@ public class Solution {
         if(nums == null || nums.length < 3) return res; 
         Arrays.sort(nums);
         int len = nums.length; 
-        for(int i = 0; i < len; i++) {
-            int m = i+1;
-            int n = len-1;
+        for(int i = 0; i <= len - 3; i++) {
+            int left = i+1;
+            int right = len-1;
             if(i != 0 && nums[i] == nums[i-1]) continue;
-            while(m < n) {
-                int sum = nums[i] + nums[m] + nums[n];
+            while(left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                System.out.println(sum);
                 if(sum == 0) {
                     List<Integer> temp = new LinkedList();
                     temp.add(nums[i]);
-                    temp.add(nums[m]);
-                    temp.add(nums[n]);
+                    temp.add(nums[left]);
+                    temp.add(nums[right]);
                     res.add(temp);
-                    m++;
-                    n--;
-                    while(nums[m+1] == nums[m]) m++;
-                    while(nums[n] == nums[n-1]) n--;
+                    left++;
+                    right--;
+                    System.out.println("left" + left);
+                    System.out.println("right" + right);
+                    //left 用减的right用加的,和遍历过的比
+                    while(left < right && nums[left-1] == nums[left]) left++;
+                    while(left < right && nums[right] == nums[right+1]) right--;
                 } else if(sum > 0) {
-                    n--;
+                    right--;
                 } else {
-                    m++;
+                    left++;
                 }
             }
         }
