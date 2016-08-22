@@ -10,7 +10,6 @@ public class Solution {
             if(i != 0 && nums[i] == nums[i-1]) continue;
             while(left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
-                System.out.println(sum);
                 if(sum == 0) {
                     List<Integer> temp = new LinkedList();
                     temp.add(nums[i]);
@@ -19,8 +18,6 @@ public class Solution {
                     res.add(temp);
                     left++;
                     right--;
-                    System.out.println("left" + left);
-                    System.out.println("right" + right);
                     //left 用减的right用加的,和遍历过的比
                     while(left < right && nums[left-1] == nums[left]) left++;
                     while(left < right && nums[right] == nums[right+1]) right--;
