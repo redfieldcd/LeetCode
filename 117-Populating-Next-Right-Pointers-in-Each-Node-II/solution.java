@@ -21,9 +21,8 @@
                     } else {
                         head = cur.left;
                     }
+                    pre = cur.left;
                 }
-                
-                pre = cur.left;
                 
                 if(cur.right != null) {
                     if(pre != null) {
@@ -31,8 +30,8 @@
                     } else {
                         head = cur.right;
                     }
+                    pre =cur.right;
                 }
-                pre =cur.right;
             }
             
             cur = head;
