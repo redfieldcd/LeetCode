@@ -32,6 +32,8 @@
                     }
                     pre =cur.right;
                 }
+                
+                cur = cur.next;
             }
             
             cur = head;
