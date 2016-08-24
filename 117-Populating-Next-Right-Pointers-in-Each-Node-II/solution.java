@@ -17,7 +17,7 @@
             while(cur != null) {
                 if(cur.left != null) {
                     if(pre != null) {
-                        prev.next = cur.left;
+                        pre.next = cur.left;
                     } else {
                         head = cur.left;
                     }
