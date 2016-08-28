@@ -8,7 +8,7 @@
  */
 public class Solution {
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        if(root == null) return null;
+        if(node == null) return null;
         UndirectedGraphNode root = new UndirectedGraphNode(node);
         Queue<UndirectedGraphNode> q = new LinkedList();
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap();
