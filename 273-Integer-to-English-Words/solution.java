@@ -8,7 +8,6 @@ public class Solution {
         return helper(num);
     }
     
-    
     public String helper(int num) {
         String result = new String();
         if(num < 10) result = belowTen[num];
