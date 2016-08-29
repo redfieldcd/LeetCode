@@ -1,4 +1,5 @@
 //暴力搜索法，时间过不了，O(n^3)
+//稍微修改一下，判断某个元素是否为0然后再进行内层循环 时间复杂度减少到0(N^2)
 public class Solution {
     public int[][] multiply(int[][] A, int[][] B) {
         if(A.length == 0 || B.length == 0) return null;
