@@ -2,10 +2,10 @@ public class Solution {
     public int mySqrt(int x) {
         if(x == 0) return 0;
         
-        int left = 0, right = x;
+       long left = 0, right = x;
         
         while(left<= right) {
-            int mid = left + (right - left)/2;
+            long mid = left + (right - left)/2;
             if(mid*mid > x) {
                 right = mid - 1;
             } else {
@@ -15,5 +15,7 @@ public class Solution {
                 left = mid + 1;
             }
         }
+        
+        return 0;
     }
 }
