@@ -8,7 +8,7 @@ public class Solution extends Reader4 {
      * @return    The number of characters read
      */
     public int read(char[] buf, int n) {
-        for(int i = 0; i < buf.length; i+4) {
+        for(int i = 0; i < buf.length; i += 4) {
             char[] temp = new char[4];
             int len = read4(temp);
             
