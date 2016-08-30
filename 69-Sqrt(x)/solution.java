@@ -10,7 +10,7 @@ public class Solution {
                 right = mid - 1;
             } else {
                 if((mid+1)*(mid+1) > x) {
-                    return mid;
+                    return (int)mid;
                 }
                 left = mid + 1;
             }
