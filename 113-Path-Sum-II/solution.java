@@ -10,6 +10,9 @@
 public class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new LinkedList();
+        
+        if(root == null) return res;
+        
         List<Integer> temp = new LinkedList();
         helper(res, root, sum, temp);
         
