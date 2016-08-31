@@ -1,3 +1,4 @@
+//sort数组
 public class Solution {
     public int hIndex(int[] citations) {
         int H = 0;
@@ -12,3 +13,6 @@ public class Solution {
         return H;
     }
 }
+
+//binary search
+//如果原来的数组是排好序的，就可以用binary search
