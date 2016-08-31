@@ -1,9 +1,9 @@
 public class Solution {
     public void rotate(int[] nums, int k) {
-        int n = nums.length;
-        int[] res = new int[n];
-        System.arraycopy(nums, k + 1, res, 0, n - k - 1);
-        System.arraycopy(nums, 0, res, n - k - 1, k + 1);
-        System.arraycopy(res, 0, nums, 0, n);
-     }
+        k = k % nums.length;
+        int[] temp = new int[k];
+        System.arraycopy(nums, nums.length - k, temp, 0, k);
+        System.arraycopy(nums, 0, nums, k, nums.length - k);
+        System.arraycopy(temp, 0, nums, 0, k);
+    }
 }
