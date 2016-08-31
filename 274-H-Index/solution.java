@@ -20,14 +20,14 @@ public class Solution {
         int n = citations.length;
         if(n == 0) return 0;
         
-        int[] stat = new int[n];
+        int[] stat = new int[n+1];
         int sum = 0;
         
-        for(int i = 0; i < stat.length; i++) {
+        for(int i = 0; i < n; i++) {
             stat[citations[i] <= n ? citations[i] : n] += 1;
         }
         
-        for(int i = n; i >= 0; i--) {
+        for(int i = n; i > 0; i--) {
             sum += stat[i];
             if(sum >= i) {
                 return i;
