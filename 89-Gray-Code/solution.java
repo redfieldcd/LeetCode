@@ -8,6 +8,7 @@ public class Solution {
             List<Integer> temp = new LinkedList();
             temp.addAll(res);
             
+            //镜像编码
             for(int j = temp.size() - 1; j >= 0; j--) {
                 res.add((1<<i) + temp.get(j));
             }
