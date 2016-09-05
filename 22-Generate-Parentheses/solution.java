@@ -1,3 +1,4 @@
+// running time  O(n), stack space O(n)
 public class Solution {
     public List<String> generateParenthesis(int n) {
         List<String> res = new LinkedList();
