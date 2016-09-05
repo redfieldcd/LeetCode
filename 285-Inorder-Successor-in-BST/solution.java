@@ -40,16 +40,33 @@
 // }
 
 //recursion
+// public class Solution {
+//     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+//         if(root == null) return null;
+        
+//         if(root.val <= p.val) {
+//             return inorderSuccessor(root.right, p);
+//         } else {
+//             TreeNode left = inorderSuccessor(root.left, p);
+//             return left == null ? root:left;
+//         }
+//     }
+// }
+
+//Iteration
 public class Solution {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        if(root == null) return null;
-        
-        if(root.val <= p.val) {
-            return inorderSuccessor(root.right, p);
-        } else {
-            TreeNode left = inorderSuccessor(root.left, p);
-            return left == null ? root:left;
-        }
+       TreeNode successor = null;
+       
+       while(root != null) {
+           if(root.val > p.val) {
+               successor = root;
+               root = root.left;
+           } else {
+               root = root.right;
+           }
+       }
+       
+       return successor;
     }
 }
-
