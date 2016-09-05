@@ -10,6 +10,9 @@ public class Solution {
         return false;
     }
     
+    //board[y][x] ^= 256 it's a marker that the letter at position x,y is a part of word we search.
+    //After board[y][x] ^= 256 the char became not a valid letter. After second board[y][x] ^= 256
+    //it became a valid letter again.
     public boolean search(char[][] board, String word, int i, int j, int index) {
         if(index >= word.length()) return true;
         
