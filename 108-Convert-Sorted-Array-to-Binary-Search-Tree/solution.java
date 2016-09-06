@@ -34,38 +34,37 @@
 public class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
         if(nums == null || nums.length == 0) return null;
-        Queue<TreeNode> node = new LinkedList();
-        Queue<Integer> left = new LinkedList();
-        Queue<Integer> right = new LinkedList();
+        Deque<TreeNode> node = new LinkedList();
+        Deque<Integer> left = new LinkedList();
+        Deque<Integer> right = new LinkedList();
         
         TreeNode root = new TreeNode(0);
-        node.offer(root);
-        left.offer(0);
-        right.offer(nums.length-1);
+        node.push(root);
+        left.push(0);
+        right.push(nums.length-1);
         
         while(!node.isEmpty()) {
-            TreeNode cur = node.poll();
-            int l = left.poll();
-            int r = right.poll();
+            TreeNode cur = node.pop();
+            int l = left.pop();
+            int r = right.pop();
             
             int mid =l + (r - l) / 2;
             cur.val = nums[mid];
             
             if(l <= mid - 1) {
                 cur.left = new TreeNode(0);
-                node.offer(cur.left);
-                left.offer(l);
-                right.offer(r);
+                node.push(cur.left);
+                left.push(l);
+                right.push(mid - 1);
             }
             
             if(r >= mid + 1) {
                 cur.right = new TreeNode(0);
-                node.offer(cur.right);
-                left.offer(mid + 1);
-                right.offer(r);
+                node.push(cur.right);
+                left.push(mid + 1);
+                right.push(r);
             }
         }
-        
         return root;
     }
 }
