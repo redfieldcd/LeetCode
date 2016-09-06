@@ -5,8 +5,11 @@
  *     TreeNode left;
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
- * }
+ * 
  */
+ 
+ // time O(n) space O(n) 
+ //把tree中每个元素都遍历了一遍
 public class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         List<List<Integer>> res = new LinkedList();
