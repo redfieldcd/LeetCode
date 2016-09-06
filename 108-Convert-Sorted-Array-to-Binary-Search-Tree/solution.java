@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+ // running time O(n), space O(h)
 public class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
         if(nums == null || nums.length == 0) return null;
@@ -16,7 +18,8 @@ public class Solution {
     public TreeNode helper(int[] nums, int start, int end) {
         if(start > end) return null;
         
-        int mid = (start + end) / 2;
+        //avoid integer overflow
+        int mid = start + (end - start) / 2;
         
         TreeNode root = new TreeNode(nums[mid]);
         
