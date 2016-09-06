@@ -26,42 +26,44 @@
 // }
 
 // iteration
-// public class Solution {
-//     public List<Integer> preorderTraversal(TreeNode root) {
-//         Stack<TreeNode> s = new Stack<TreeNode>();
-//         List<Integer> list = new LinkedList<Integer>();
-//         if(root == null) return list;
-//         s.push(root);
+public class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        List<Integer> list = new LinkedList<Integer>();
+        if(root == null) return list;
+        s.push(root);
         
-//         while(!s.isEmpty()) {
-//             TreeNode node = s.pop();
-//             if(node.right != null) {
-//                 s.push(node.right);
-//             }
+        while(!s.isEmpty()) {
+            TreeNode node = s.pop();
             
-//             if(node.left != null) {
-//                 s.push(node.left);
-//             }
+            //先push right,再push left
+            if(node.right != null) {
+                s.push(node.right);
+            }
             
-//             list.add(node.val);
-//         }
-//         return list;
-//     }
-// }
+            if(node.left != null) {
+                s.push(node.left);
+            }
+            
+            list.add(node.val);
+        }
+        return list;
+    }
+}
 
 
 //recursion
-public class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> list = new LinkedList<Integer>();
-        traversal(root, list);
-        return list;
-    }
+// public class Solution {
+//     public List<Integer> preorderTraversal(TreeNode root) {
+//         List<Integer> list = new LinkedList<Integer>();
+//         traversal(root, list);
+//         return list;
+//     }
     
-    public void traversal(TreeNode root, List<Integer> list) {
-        if(root == null) return;
-        list.add(root.val);
-        traversal(root.left, list);
-        traversal(root.right, list);
-    }
-}
+//     public void traversal(TreeNode root, List<Integer> list) {
+//         if(root == null) return;
+//         list.add(root.val);
+//         traversal(root.left, list);
+//         traversal(root.right, list);
+//     }
+// }
