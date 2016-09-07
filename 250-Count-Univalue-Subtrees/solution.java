@@ -21,11 +21,11 @@ public class Solution {
         boolean right = isValid(root.right, count);
         
         if(left && right) {
-           if(root.left.val != root.val) {
+           if(root.left != null && root.left.val != root.val) {
                 return false;
             }
             
-            if(root.right.val != root.val) {
+            if(root.right != null && root.right.val != root.val) {
                 return false;
             } 
             count++;
