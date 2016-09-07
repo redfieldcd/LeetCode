@@ -9,7 +9,7 @@
  */
 public class Solution {
     public TreeNode upsideDownBinaryTree(TreeNode root) {
-        if(root = null || root.left == null || root.right == null) return root;
+        if(root == null || (root.left == null && root.right == null)) return root;
         
         TreeNode newNode = upsideDownBinaryTree(root.left);
         
