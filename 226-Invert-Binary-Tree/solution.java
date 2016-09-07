@@ -25,6 +25,7 @@
 public class Solution {
     public TreeNode invertTree(TreeNode root) {
         Queue<TreeNode> q = new LinkedList();
+        if(root == null) return null;
         q.offer(root);
         while(!q.isEmpty()) {
             TreeNode node = q.poll();
