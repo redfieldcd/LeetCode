@@ -51,8 +51,8 @@ public class Solution {
         Stack<TreeNode> stackP = new Stack();
         Stack<TreeNode> stackQ = new Stack();
         
-        stackP.push(p);
-        stackQ.push(q);
+        if(p != null) stackP.push(p);
+        if(q != null) stackQ.push(q);
         
         while(!stackP.isEmpty() && !stackQ.isEmpty()) {
             TreeNode nodeP = stackP.pop();
