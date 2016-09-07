@@ -17,8 +17,8 @@ public class Solution {
             left = 0;
             TreeNode curr = root;
             while(curr != null) {
-                curr = curr.left;
                 left++;
+                curr = curr.left;
             }
         }
         
@@ -26,8 +26,8 @@ public class Solution {
             right = 0;
             TreeNode curr = root;
             while(curr != null) {
-                curr = curr.right;
                 right++;
+                curr = curr.right;
             }
         }
         
