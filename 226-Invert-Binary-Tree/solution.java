@@ -22,24 +22,50 @@
 
 //Iteration Time: O(n) space O(n)
 // 这里并不需要对每一层的数据输出，所以不需要一个for循环
+// public class Solution {
+//     public TreeNode invertTree(TreeNode root) {
+//         Queue<TreeNode> q = new LinkedList();
+//         if(root == null) return null;
+//         q.offer(root);
+//         while(!q.isEmpty()) {
+//             TreeNode node = q.poll();
+            
+//             TreeNode left = node.left;
+//             node.left = node.right;
+//             node.right = left;
+            
+//             if(node.left != null) {
+//                 q.offer(node.left);
+//             }
+            
+//             if(node.right != null) {
+//                 q.offer(node.right);
+//             }
+//         }
+        
+//         return root;
+//     }
+// }
+
+//Dfs
 public class Solution {
     public TreeNode invertTree(TreeNode root) {
-        Queue<TreeNode> q = new LinkedList();
-        if(root == null) return null;
-        q.offer(root);
-        while(!q.isEmpty()) {
-            TreeNode node = q.poll();
-            
+        Stack<TreeNode> s = new Stack();
+        if(root == null) return root;
+        
+        s.push(root);
+        while(!s.isEmpty()) {
+            TreeNode node = s.pop();
             TreeNode left = node.left;
             node.left = node.right;
             node.right = left;
             
             if(node.left != null) {
-                q.offer(node.left);
+                s.push(node.left);
             }
             
             if(node.right != null) {
-                q.offer(node.right);
+                s.push(node.right);
             }
         }
         
