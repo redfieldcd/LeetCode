@@ -63,7 +63,8 @@
 public class Solution {
     public int longestConsecutive(TreeNode root) {
         Queue<TreeNode> q = new LinkedList();
-        Queue<TreeNode> num = new linkedList();
+        Queue<TreeNode> num = new LinkedList();
+        if(root == null) return 0;
         int max = 1;
         q.offer(root);
         num.offer(1);
