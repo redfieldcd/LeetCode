@@ -45,6 +45,8 @@ public class Solution {
     public int countNodes(TreeNode root) {
         Queue<TreeNode> q = new LinkedList();
         int num = 0;
+        
+        if(root == null) return num;
         q.offer(root);
         
         while(!q.isEmpty()) {
