@@ -9,6 +9,7 @@
  */
  
  //Recursion
+ // Running time: O(n), space: O(h)
 // public class Solution {
 //     public List<Integer> rightSideView(TreeNode root) {
 //         List<Integer> res = new LinkedList();
@@ -30,6 +31,7 @@
 // }
 
 //Iteration Based on level order traversal
+//running time: O(n) space: O(n)
 public class Solution {
     public List<Integer> rightSideView(TreeNode root) {
         Queue<TreeNode> q = new LinkedList();
@@ -57,7 +59,6 @@ public class Solution {
                 }
             }
         }
-        
         return res;
     }
 }
