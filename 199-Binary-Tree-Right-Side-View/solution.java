@@ -35,6 +35,7 @@ public class Solution {
         Queue<TreeNode> q = new LinkedList();
         List<Integer> res = new LinkedList();
         
+        if(root == null) return res;
         q.offer(root);
         
         while(!q.isEmpty()) {
