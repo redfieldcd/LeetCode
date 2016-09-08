@@ -7,6 +7,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
+ // Time: O(n^2) Space: O(log(n) ^ 2)
 public class Solution {
     public int largestBSTSubtree(TreeNode root) {
         if(root == null) return 0;
