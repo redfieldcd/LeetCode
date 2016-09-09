@@ -1,3 +1,4 @@
+// Running time O(n^2) Space O(n)
 public class Solution {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new LinkedList();
