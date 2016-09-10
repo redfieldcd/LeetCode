@@ -17,6 +17,7 @@ public class Solution {
             return;
         }
         
+        // i = index是为了remove duplicate
         for(int i = index; i <= n; i++) {
             if(n % i == 0) {
                 path.add(i);
