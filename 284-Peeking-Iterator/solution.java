@@ -1,8 +1,8 @@
 // Java Iterator interface reference:
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {
-    Private Integer next = null;
-    Private Iterator<Integer> iter;
+    private Integer next = null;
+    private Iterator<Integer> iter;
 	public PeekingIterator(Iterator<Integer> iterator) {
 	    // initialize any member here.
 	    iter = iterator;
