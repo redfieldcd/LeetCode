@@ -17,6 +17,7 @@ public class Solution {
             return;
         }
         
+        // 最大的数字就是9
         for(int i = index; i <= 9; i++) {
             path.add(i);
             search(res, path, i + 1, k - 1, n - i);
