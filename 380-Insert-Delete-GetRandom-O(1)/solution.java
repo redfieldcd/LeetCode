@@ -25,6 +25,7 @@ public class RandomizedSet {
         } else {
             int pos = map.get(val);
             int num = list.get(pos);
+            // 更新原来在list末尾元素的位置
             map.put(list.get(list.size() - 1), pos);
             list.set(pos, list.get(list.size() - 1));
             list.remove(list.size() - 1);
