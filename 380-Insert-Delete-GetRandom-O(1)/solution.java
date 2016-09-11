@@ -25,6 +25,7 @@ public class RandomizedSet {
         } else {
             int pos = map.get(val);
             int num = list.get(pos);
+            map.put(list.get(list.size() - 1), pos);
             list.set(pos, list.get(list.size() - 1));
             list.remove(list.size() - 1);
             map.remove(val);
