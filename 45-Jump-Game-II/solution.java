@@ -1,3 +1,4 @@
+//greedy algorithm 用low and high来分块搜索
 public class Solution {
     public int jump(int[] nums) {
         int preHigh = 0, high = 0, low = 0, step = 0;
