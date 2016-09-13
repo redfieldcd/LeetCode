@@ -44,7 +44,7 @@ public class TwoSum {
 	    for(int i = 0; i < list.size(); i++) {
 	        int num1 = list.get(i);
 	        int num2 = value - num1;
-	        if(((num1 == num2) && map.get(num1) > 1) || ((num1 != num2) && map.contains(num2))) {
+	        if(((num1 == num2) && map.get(num1) > 1) || ((num1 != num2) && map.containsKey(num2))) {
 	            return true;
 	        }
 	    }
