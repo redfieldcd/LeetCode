@@ -26,22 +26,50 @@
 // }
 
 // 暴力的O(n^2)
+// public class Solution {
+//     public int maxSubArrayLen(int[] nums, int k) {
+//         int max = 0;
+//         for(int i = 0; i < nums.length; i++) {
+//             int sum = 0;
+//             for(int j = i; j < nums.length; j++) {
+//                 sum += nums[j];
+//                 if(sum == k) {
+//                     int len = j - i + 1;
+//                     if(len > max) max = len;
+//                 }
+//             }
+//         }
+//         return max;
+//     }
+// }
+
+
 public class Solution {
     public int maxSubArrayLen(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap();
         int max = 0;
+        if(nums == null || nums.length == 0) return 0;
+        
+        map.put(0, -1);
+        
+        for(int i = 1; i < nums.length; i++) {
+            nums[i] += nums[i-1];
+        }
+        
         for(int i = 0; i < nums.length; i++) {
-            int sum = 0;
-            for(int j = i; j < nums.length; j++) {
-                sum += nums[j];
-                if(sum == k) {
-                    int len = j - i + 1;
-                    if(len > max) max = len;
-                }
+            if(map.containsKey(nums[i] - k)) {
+                max = Math.max(max, i - map.get(nums[i] - k));
+            }
+            
+            if(!map.containsKey(nums[i])) {
+                map.put(nums[i], i);
             }
         }
+        
         return max;
     }
 }
+
 
 
 
