@@ -12,6 +12,7 @@ public class Solution {
             while(left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
                 if(sum < target) {
+                    //最重要的是这一步+这个问题重复也算进去
                     count += right - left;
                     left++;
                 } else {
