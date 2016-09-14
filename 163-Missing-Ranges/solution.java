@@ -1,6 +1,15 @@
 public class Solution {
     public List<String> findMissingRanges(int[] nums, int lower, int upper) {
         List<String> list = new LinkedList();
+        if(nums == null) return list;
+        if(nums.length == 0) {
+            if(upper == lower) {
+                list.add(""+lower);
+            } else {
+                list.add("" + lower + "->" + upper);
+            }
+            return list;
+        }
         
         for(int i = 0; i < nums.length; i++) {
             if(i == 0) {
