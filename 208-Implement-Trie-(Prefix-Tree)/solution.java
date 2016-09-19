@@ -53,7 +53,7 @@ public class Trie {
     
     private TrieNode searchNode(String word) {
         HashMap<Character, TrieNode> children = root.children;
-        TreeNode next = null;
+        TrieNode next = null;
         for(int i = 0; i < word.length(); i++) {
             if(children.containsKey(word.charAt(i))) {
                 next = children.get(word.charAt(i));
