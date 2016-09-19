@@ -4,14 +4,12 @@ class TrieNode {
         Map<Character, TrieNode> children = new HashMap();
         boolean isLeaf = false;
         char c;
-        public TrieNode(){}
+        public TrieNode(){
+            
+        }
         public TrieNode(char c) {
             this.c = c;
         }
-        // public TrieNode(){};
-        // public TrieNode(char c) {
-        //     this.c = c;
-        // }
     }
 }
 
