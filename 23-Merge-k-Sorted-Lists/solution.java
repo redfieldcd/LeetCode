@@ -8,6 +8,7 @@
  */
 public class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length == 0) return null;
         PriorityQueue<ListNode> q = new PriorityQueue<ListNode>(new Comparator<ListNode>(){
             public int compare(ListNode l1, ListNode l2) {
                 return l1.val - l2.val;
@@ -17,7 +18,7 @@ public class Solution {
         ListNode head = node;
         
         for(ListNode ln: lists) {
-            q.offer(ln);
+            if(ln != null) q.offer(ln);
         }
         
         while(!q.isEmpty()) {
