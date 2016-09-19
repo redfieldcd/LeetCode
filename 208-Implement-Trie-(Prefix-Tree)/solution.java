@@ -29,7 +29,7 @@ public class Trie {
                 children.put(word.charAt(i), next);
             }
             children = next.children;
-            if(i == word.length - 1) {
+            if(i == word.length() - 1) {
                 next.isLeaf = true;
             }
         }
