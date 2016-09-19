@@ -1,6 +1,6 @@
 class TrieNode {
     // Initialize your data structure here.
-    Map<Character, TrieNode> children = new HashMap();
+    HashMap<Character, TrieNode> children = new HashMap();
     boolean isLeaf = false;
     char c;
     public TrieNode(){}
