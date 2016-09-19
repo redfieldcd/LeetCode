@@ -48,7 +48,7 @@ public class Trie {
     // Returns if there is any word in the trie
     // that starts with the given prefix.
     public boolean startsWith(String prefix) {
-        return search(prefix) != null;
+        return searchNode(prefix) != null;
     }
     
     private TrieNode searchNode(String word) {
