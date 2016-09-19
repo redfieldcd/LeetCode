@@ -25,7 +25,7 @@ public class Solution {
             ListNode cur = q.poll();
             node.next = cur;
             node = node.next;
-            q.offer(cur.next);
+            if(cur.next != null) q.offer(cur.next);
         }
         
         return head.next;
