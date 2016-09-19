@@ -9,6 +9,19 @@ class TrieNode {
     }
 }
 
+
+class TrieNode {
+    // Initialize your data structure here.
+    Map<Character, TrieNode> children = new HashMap();
+    boolean isLeaf = false;
+    char c;
+    public TrieNode(){}
+    public TrieNode(char c) {
+        this.c = c;
+    }
+}
+
+
 public class Trie {
     private TrieNode root;
 
