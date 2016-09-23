@@ -1,6 +1,6 @@
 public class Solution {
     public int longestConsecutive(int[] nums) {
-        if(nums.length == 0) return 1;
+        if(nums.length == 0 || nums.length == 1) return 1;
         PriorityQueue<Integer> q = new PriorityQueue();
         
         for(int i = 0; i < nums.length; i++) {
