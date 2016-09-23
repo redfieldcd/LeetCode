@@ -8,7 +8,7 @@ public class LRUCache {
             protected boolean removeEldestEntry(Map.Entry eldest) {
                 return size() > capacity;
             }
-        }
+        };
     }
     
     public int get(int key) {
