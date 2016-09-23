@@ -24,7 +24,7 @@
 
 // O(nlog(n))
 public class Solution {
-    public int longestIncreasingSubsequence(int[] nums) {
+    public int lengthOfLIS(int[] nums) {
         // write your code here
         if(nums.length == 0){
             return 0;
@@ -38,7 +38,7 @@ public class Solution {
         for(int i = 1; i < nums.length; i++){
             if(nums[i] < tails[0]){
                 tails[0] = nums[i];
-            } else if (nums[i] >= tails[len]){
+            } else if (nums[i] > tails[len]){
                 tails[++len] = nums[i];
             } else {
             // 如果在中间，则二分搜索
