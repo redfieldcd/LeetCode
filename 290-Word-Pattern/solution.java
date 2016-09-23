@@ -18,7 +18,7 @@ public class Solution {
         String[] strs = str.split(" ");
         
         if(pattern.length() != strs.length) return false;
-        Map<Integer, String> map = new HashMap(); 
+        Map<Character, String> map = new HashMap(); 
         
         for(int i = 0; i < pattern.length(); i++) {
             char c = pattern.charAt(i);
