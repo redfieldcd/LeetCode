@@ -5,10 +5,10 @@ public class WordDictionary {
         boolean isLeaf = false;
         char c;
         
-        public TrieNode() {
+        TrieNode() {
            children = new TrieNode[26]; 
         }
-        public TrieNode(char c) {
+        TrieNode(char c) {
             children = new TrieNode[26];
             this.c = c;
         }
