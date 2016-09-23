@@ -12,8 +12,9 @@ public class LRUCache {
     }
     
     public int get(int key) {
-        if(map.contains(key)) return map.get(key);
-        else return -1;
+        // if(map.contains(key)) return map.get(key);
+        // else return -1;
+        return map.getOrDefault(key, -1);
     }
     
     public void set(int key, int value) {
