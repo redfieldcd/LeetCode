@@ -21,7 +21,7 @@ public class Solution {
         Map<Integer, String> map = new HashMap(); 
         
         for(int i = 0; i < pattern.length(); i++) {
-            char c = pattern.charAt(i)
+            char c = pattern.charAt(i);
             if(map.containsKey(c)) {
                 if(!map.get(c).equals(strs[i])) return false;
             } else {
