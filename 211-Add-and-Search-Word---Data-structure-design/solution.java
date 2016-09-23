@@ -1,6 +1,6 @@
 public class WordDictionary {
     
-    public class TrieNode {
+    class TrieNode {
         TrieNode[] children;
         boolean isLeaf = false;
         char c;
