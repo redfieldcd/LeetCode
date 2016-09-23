@@ -14,7 +14,7 @@ public class WordDictionary {
         }
     }
     
-    TrieNode root = Tier();
+    TrieNode root = TierNode();
     // Adds a word into the data structure.
     public void addWord(String word) {
         TrieNode pointer = root;
