@@ -2,12 +2,12 @@ public class Solution {
     List<String> res;
     public List<String> addOperators(String num, int target) {
         res = new LinkedList();
+        if(num == null || num.length() == 0) return res;
         search(num, target, 1, num.charAt(0) + "", num.charAt(0) - '0', num.charAt(0) - '0');
         return res;
     }
     
     public void search(String num, int target, int index, String path, int value, int mul) {
-        // System.out.println(path + " "  + value + " " + mul);
         if(index == num.length() && value == target) {
             res.add(path);
             return;
