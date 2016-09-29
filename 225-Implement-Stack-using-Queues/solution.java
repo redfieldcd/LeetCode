@@ -20,7 +20,7 @@ class MyStack {
 
     // Get the top element.
     public int top() {
-        q.peek();
+        return q.peek();
     }
 
     // Return whether the stack is empty.
