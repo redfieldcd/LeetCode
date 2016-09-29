@@ -13,14 +13,14 @@ class MyStack {
     // Removes the element on top of the stack.
     public void pop() {
         if(!q.isEmpty()) {
-           q.removeLast(); 
+           q.poll(); 
         }
         
     }
 
     // Get the top element.
     public int top() {
-        q.peekLast();
+        q.peek();
     }
 
     // Return whether the stack is empty.
