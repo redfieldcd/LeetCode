@@ -10,7 +10,7 @@ class MyStack {
     // Removes the element on top of the stack.
     public void pop() {
         if(!q.isEmpty()) {
-           q.pollLast(); 
+           q.removeLast(); 
         }
         
     }
