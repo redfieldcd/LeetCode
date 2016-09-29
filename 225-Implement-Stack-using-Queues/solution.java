@@ -5,6 +5,9 @@ class MyStack {
     
     public void push(int x) {
         q.offer(x);
+        for(int i = 1; i < q.size(); i++) {
+            q.add(q.poll());
+        }
     }
 
     // Removes the element on top of the stack.
