@@ -11,9 +11,9 @@ public class Solution {
     }
     
     public void helper(int[] nums, int idx, List<Integer> temp, List<List<Integer>> res) {
-        res.add(res.add(new LinkedList(temp)));
+        res.add(res.add(new LinkedList<Integer>(temp)));
         
-        for(int i = index; i < nums.length; i++) {
+        for(int i = idx; i < nums.length; i++) {
             temp.add(nums[i]);
             helper(nums, idx+1, temp, res);
             temp.remove(temp.size() - 1);
