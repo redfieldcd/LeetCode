@@ -25,23 +25,28 @@
 //     }
 // }
 
-// BFS
+// inorder
 public class Solution {
     public boolean isValidBST(TreeNode root) {
-        Queue<TreeNode> q = new LinkedList();
+        if(root == null) return true;
+        Stack<TreeNode> s = new Stack();
+        long pre = Long.MIN_VALUE;
+        s.push(root);
         
-        q.offer(root);
-        
-        while(!q.isEmpty()) {
-            TreeNode node = q.poll();
-            if(node.left != null) {
-                if(node.left.val >= node.val) return false;
-                q.offer(node.left);
+        while(!s.isEmpty()) {
+            while(root.left != null) {
+                s.push(root.left);
+                root = root.left;
             }
             
-            if(node.right != null) {
-                if(node.right.val <= node.val) return false;
-                q.offer(node.right);
+            root = s.pop();
+            
+            if(root.val <= pre)  return false;
+            
+            pre = root.val;
+            
+            if(root.right != null) {
+                root = root.right;
             }
         }
         
