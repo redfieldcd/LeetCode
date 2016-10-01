@@ -35,12 +35,12 @@ public class Solution {
         while(!q.isEmpty()) {
             TreeNode node = q.poll();
             if(node.left != null) {
-                if(node.left >= node.val) return false;
+                if(node.left.val >= node.val) return false;
                 q.offer(node.left);
             }
             
             if(node.right != null) {
-                if(node.right <= node.val) return false;
+                if(node.right.val <= node.val) return false;
                 q.offer(node.right);
             }
         }
