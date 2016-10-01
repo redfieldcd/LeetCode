@@ -9,15 +9,15 @@
  */
 public class Solution {
     public boolean isValidBST(TreeNode root) {
-        return helper(root, Integer.MIN_VAULE, Integer.MAX_VALUE);
+        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     
     // check whether root.val is smaller than max and larger than min
     // check whetehr tree with root is a valid bst
-    public boolean helper(TreeNode root, int min, int max) {
+    public boolean helper(TreeNode root, long min, long max) {
         if(root == null) return true;
         
-        if(root.val >= min || root.val <= max) {
+        if(root.val <= min || root.val >= max) {
             return false;
         }
         
