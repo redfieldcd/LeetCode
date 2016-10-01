@@ -31,11 +31,10 @@ public class Solution {
         if(root == null) return true;
         Stack<TreeNode> s = new Stack();
         long pre = Long.MIN_VALUE;
-        s.push(root);
         
-        while(!s.isEmpty()) {
-            while(root.left != null) {
-                s.push(root.left);
+        while(root != null || !s.isEmpty()) {
+            while(root != null) {
+                s.push(root);
                 root = root.left;
             }
             
@@ -45,9 +44,7 @@ public class Solution {
             
             pre = root.val;
             
-            if(root.right != null) {
-                root = root.right;
-            }
+            root = root.right;
         }
         
         return true;
