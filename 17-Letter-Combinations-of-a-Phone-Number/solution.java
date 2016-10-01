@@ -13,14 +13,15 @@ public class Solution {
     public void helper(String[] table, int idx, String digits, StringBuilder temp) {
         if(idx == digits.length()) {
             if(temp.length() != 0) res.add(temp.toString());
-        } else {
-            String all = table[digits.charAt(idx) - '0'];
+            return;
+        }
         
-            for(int i = 0; i < all.length(); i++) {
-                temp.append(all.charAt(i));
-                helper(table, idx+1, digits, temp);
-                temp.deleteCharAt(temp.length()-1);
-            }
+        String all = table[digits.charAt(idx) - '0'];
+    
+        for(int i = 0; i < all.length(); i++) {
+            temp.append(all.charAt(i));
+            helper(table, idx+1, digits, temp);
+            temp.deleteCharAt(temp.length()-1);
         }
     }
 }
