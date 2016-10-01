@@ -28,7 +28,7 @@
 // BFS
 public class Solution {
     public boolean isValidBST(TreeNode root) {
-        Queue<TreeNode> q = new Queue();
+        Queue<TreeNode> q = new LinkedList();
         
         q.offer(root);
         
