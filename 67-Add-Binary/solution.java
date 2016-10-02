@@ -11,7 +11,7 @@ public class Solution {
             
             int num = m + n + carry;
             
-            s.insert(0, String.valueOf(num % 2));
+            s.insert(0, num % 2 + "");
             
             i--;
             j--;
