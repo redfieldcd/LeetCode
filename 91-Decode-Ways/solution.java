@@ -2,7 +2,7 @@ public class Solution {
     public int numDecodings(String s) {
         int[] dp = new int[s.length()+1];
         
-        if(s.length == 0) return 1;
+        if(s.length() == 0) return 0;
         dp[0] = 1;
         dp[1] = s.charAt(0) == '0' ? 0 : 1;
         
