@@ -18,7 +18,7 @@ public class Solution {
             carry = num / 2;
         }
         
-        if(carry == 1) s.insert(0, String.valueOf(carry));
+        if(carry == 1) s.insert(0, carry + "");
         
         return s.toString();
     }
