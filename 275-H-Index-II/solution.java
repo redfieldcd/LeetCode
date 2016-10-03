@@ -7,6 +7,7 @@ public class Solution {
          
          while(min <= max) {
              int mid = min + (max - min) / 2;
+             if(citations[mind] == n - mid) return n - mid;
              if(citations[mid] < n - mid) {
                  min = mid + 1;
              } else {
