@@ -44,21 +44,20 @@ public class WordDictionary {
         } 
         
         char c = word.charAt(idx);
-        for(int i = idx; i < word.length(); i++) {
-            if(c == '.') {
-                for(int j = 0; j < 26; j++) {
-                    if(pointer.children[j] != null) {
-                        if(dfs(word, pointer.children[j], idx + 1)) {
-                            return true;
-                        }
+
+        if(c == '.') {
+            for(int j = 0; j < 26; j++) {
+                if(pointer.children[j] != null) {
+                    if(dfs(word, pointer.children[j], idx + 1)) {
+                        return true;
                     }
                 }
+            }
+        } else {
+            if(pointer.children[c - 'a'] != null) {
+                return dfs(word, pointer.children[i], idx + 1);
             } else {
-                if(pointer.children[c - 'a'] != null) {
-                    return dfs(word, pointer.children[i], idx + 1);
-                } else {
-                    return false;
-                }
+                return false;
             }
         }
         return false;
