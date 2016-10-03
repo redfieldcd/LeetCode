@@ -26,7 +26,7 @@ public class Solution {
         for(Interval itv: intervals) {
             //包含重叠的边界的时候，一定要考虑等于
             if(cur.end >= itv.start) {
-                cur.start = Math.min(cur.start, itv.start); 
+                // cur.start = Math.min(cur.start, itv.start); 
                 cur.end = Math.max(cur.end, itv.end);
             } else {
                 res.add(cur);
