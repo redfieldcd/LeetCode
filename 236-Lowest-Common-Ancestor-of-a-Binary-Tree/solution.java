@@ -18,6 +18,6 @@ public class Solution {
         if(left != null && right != null) return root;
         
         //如果发现了该目标，继续向上
-        // return left == null ? right:left;
+        return left == null ? right:left;
     }
 }
