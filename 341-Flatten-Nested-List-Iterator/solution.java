@@ -26,18 +26,19 @@ public class NestedIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        return s.peek().getInteger();
+        return s.pop().getInteger();
     }
 
     @Override
     public boolean hasNext() {
         while(!s.isEmpty()) {
-            NestedInteger cur = s.pop();
+            NestedInteger cur = s.peek();
             
             if(cur.isInteger()) {
                 return true;
             }
             
+            s.pop();
             List<NestedInteger> list = cur.getList();
             for(int i = list.size() - 1; i >= 0; i--) {
                 s.push(list.get(i));
