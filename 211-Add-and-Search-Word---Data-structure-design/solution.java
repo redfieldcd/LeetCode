@@ -28,6 +28,8 @@ public class WordDictionary {
                 pointer = pointer.children[c - 'a'];
             }
         }
+        
+        pointer.isLeaf = true;
     }
 
     // Returns if the word is in the data structure. A word could
@@ -55,7 +57,7 @@ public class WordDictionary {
             }
         } else {
             if(pointer.children[c - 'a'] != null) {
-                return dfs(word, pointer.children[i], idx + 1);
+                return dfs(word, pointer.children[c - 'a'], idx + 1);
             } else {
                 return false;
             }
