@@ -33,7 +33,7 @@ public class WordDictionary {
     // Returns if the word is in the data structure. A word could
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
-        if(word == null || word.length == 0) return false;
+        if(word == null || word.length() == 0) return false;
         return dfs(word,root,0);
     }
     
