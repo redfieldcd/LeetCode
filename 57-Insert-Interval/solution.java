@@ -13,11 +13,11 @@ public class Solution {
         List<Interval> after = new LinkedList();
         List<Interval> res = new LinkedList();
         
-        Collections.sort(intervals, new Comparator<Interval>(){
-            public int compare(Interval i1, Interval i2) {
-                return i1.start - i2.start;
-            }
-        });
+        // Collections.sort(intervals, new Comparator<Interval>(){
+        //     public int compare(Interval i1, Interval i2) {
+        //         return i1.start - i2.start;
+        //     }
+        // });
         
         
         for(Interval itv: intervals) {
