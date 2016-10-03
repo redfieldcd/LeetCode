@@ -1,15 +1,14 @@
 public class WordDictionary {
-    
-    class TrieNode {
+    class TrieNode{
         TrieNode[] children;
-        boolean isLeaf = false;
         char c;
-        
-        TrieNode() {
-           children = new TrieNode[26]; 
+        boolean isLeaf;
+        public TrieNode() {
+            this.children = new TrieNode[26];
         }
-        TrieNode(char c) {
-            children = new TrieNode[26];
+        
+        public TrieNode(char c) {
+            this.children = new TrieNode[26];
             this.c = c;
         }
     }
@@ -18,47 +17,50 @@ public class WordDictionary {
     // Adds a word into the data structure.
     public void addWord(String word) {
         TrieNode pointer = root;
+        
         for(int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if(pointer.children[c - 'a'] == null) {
-                TrieNode node = new TrieNode(c);
-                pointer.children[c - 'a'] = node;
+            if(pointer.children[c - 'a'] != 0) {
                 pointer = pointer.children[c - 'a'];
             } else {
+                TrieNode node = new TrieNode(c);
+                pointer.children[c - 'a']++;
                 pointer = pointer.children[c - 'a'];
             }
         }
-        pointer.isLeaf = ture;
     }
 
     // Returns if the word is in the data structure. A word could
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
-        TrieNode pointer = root;
-        return helper(word, 0, root);
+        if(word == null || word.length == 0) return false;
+        return dfs(word,root,0);
     }
     
-    public boolean helper(String word, int index, TrieNode pointer) {
-        if(index = word.length()) {
+    public boolean dfs(String word, TrieNode pointer, int idx) {
+        if(idx == word.length()) {
             if(pointer.isLeaf) return true;
-            else return false;
-        }
+            else  return false;
+        } 
         
-        char c = word.charAt(index);
-        if(c == '.') {
-            for(int i = 0; i < 26; i++) {
-                if(pointer.children[i] != null) {
-                    return helper(word, index + 1, pointer.children[i]);
-                } 
-            }
-        } else {
-            if(pointer.children[c - 'a'] == null) {
-                return false;
+        char c = word.charAt(i);
+        for(int i = idx; i < word.length(); i++) {
+            if(c == '.') {
+                for(int i = 0; i < 26; i++) {
+                    if(pointer.children[i] != 0) {
+                        if(dfs(word, pointer.children[i], idx + 1) {
+                            return true;
+                        }
+                    }
+                }
             } else {
-                return helper(word, index + 1, pointer.children[c - 'a']);
+                if(pointer[c - 'a'] != 0) {
+                    return dfs(word, pointer.children[i], idx + 1);
+                } else {
+                    return false;
+                }
             }
         }
-        return false;
     }
 }
 
