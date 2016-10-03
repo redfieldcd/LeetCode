@@ -20,11 +20,11 @@ public class WordDictionary {
         
         for(int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if(pointer.children[c - 'a'] != 0) {
+            if(pointer.children[c - 'a'] != null) {
                 pointer = pointer.children[c - 'a'];
             } else {
                 TrieNode node = new TrieNode(c);
-                pointer.children[c - 'a']++;
+                pointer.children[c - 'a'] = node;
                 pointer = pointer.children[c - 'a'];
             }
         }
@@ -47,14 +47,14 @@ public class WordDictionary {
         for(int i = idx; i < word.length(); i++) {
             if(c == '.') {
                 for(int i = 0; i < 26; i++) {
-                    if(pointer.children[i] != 0) {
+                    if(pointer.children[i] != null) {
                         if(dfs(word, pointer.children[i], idx + 1)) {
                             return true;
                         }
                     }
                 }
             } else {
-                if(pointer[c - 'a'] != 0) {
+                if(pointer[c - 'a'] != null) {
                     return dfs(word, pointer.children[i], idx + 1);
                 } else {
                     return false;
