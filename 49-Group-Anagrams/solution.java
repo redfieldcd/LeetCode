@@ -19,7 +19,7 @@ public class Solution {
          
          for(String i : map.keySet()) {
              List<String> cur = map.get(i);
-             Collections.sort(cur);
+            //  Collections.sort(cur);
              res.add(cur);
          }
          
