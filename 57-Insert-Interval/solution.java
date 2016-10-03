@@ -19,17 +19,15 @@ public class Solution {
             }
         });
         
+        
         for(Interval itv: intervals) {
             if(newInterval.start > itv.end) {
                 before.add(itv);
-            }
-            
-            if((newInterval.start >= itv.start && newInterval.start <= itv.end) || (newInterval.end >= itv.start && newInterval.end <= itv.end)) {
+            } else if(newInterval.end < itv.start) {
+                after.add(itv);
+            } else {
                 newInterval.start = Math.min(itv.start, newInterval.start);
                 newInterval.end = Math.max(itv.end, newInterval.end);
-            }
-            if(newInterval.end < itv.start) {
-                after.add(itv);
             }
         }
         
