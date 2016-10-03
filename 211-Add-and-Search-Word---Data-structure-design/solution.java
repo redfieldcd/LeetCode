@@ -43,7 +43,7 @@ public class WordDictionary {
             else  return false;
         } 
         
-        char c = word.charAt(i);
+        char c = word.charAt(idx);
         for(int i = idx; i < word.length(); i++) {
             if(c == '.') {
                 for(int i = 0; i < 26; i++) {
