@@ -1,3 +1,5 @@
+//Time O(n)
+//Space O(1)
 public class Solution {
     public int strStr(String haystack, String needle) {
         int len = needle.length();
