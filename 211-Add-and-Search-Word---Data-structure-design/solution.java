@@ -54,7 +54,7 @@ public class WordDictionary {
                     }
                 }
             } else {
-                if(pointer[c - 'a'] != null) {
+                if(pointer.children[c - 'a'] != null) {
                     return dfs(word, pointer.children[i], idx + 1);
                 } else {
                     return false;
