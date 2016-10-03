@@ -48,7 +48,7 @@ public class WordDictionary {
             if(c == '.') {
                 for(int i = 0; i < 26; i++) {
                     if(pointer.children[i] != 0) {
-                        if(dfs(word, pointer.children[i], idx + 1) {
+                        if(dfs(word, pointer.children[i], idx + 1)) {
                             return true;
                         }
                     }
