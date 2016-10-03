@@ -19,7 +19,7 @@ public class NestedIterator implements Iterator<Integer> {
     Stack<NestedInteger> s;
     public NestedIterator(List<NestedInteger> nestedList) {
         this.s = new Stack();
-        for(int i = nestedList.length() - 1; i >= 0; i--) {
+        for(int i = nestedList.size() - 1; i >= 0; i--) {
             s.push(nestedList.get(i));
         }
     }
