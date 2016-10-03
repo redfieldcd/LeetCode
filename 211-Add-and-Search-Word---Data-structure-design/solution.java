@@ -46,9 +46,9 @@ public class WordDictionary {
         char c = word.charAt(idx);
         for(int i = idx; i < word.length(); i++) {
             if(c == '.') {
-                for(int i = 0; i < 26; i++) {
-                    if(pointer.children[i] != null) {
-                        if(dfs(word, pointer.children[i], idx + 1)) {
+                for(int j = 0; j < 26; j++) {
+                    if(pointer.children[j] != null) {
+                        if(dfs(word, pointer.children[j], idx + 1)) {
                             return true;
                         }
                     }
