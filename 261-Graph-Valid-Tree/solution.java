@@ -21,7 +21,7 @@
 //Union-find
 public class Solution {
     public boolean validTree(int n, int[][] edges) {
-        int[] parent = new parent[n];
+        int[] parent = new int[n];
         
         for(int i = 0; i < n; i++) {
             parent[i] = i;
@@ -34,11 +34,7 @@ public class Solution {
             parent[r] = l;
         }
         
-        for(int i = 1; i< n; i++) {
-            if(parent[i] != parent[0]) return false;
-        }
-        
-        return true;
+       return n - 1 == edges.length;
     }
     
     public int find(int[] parent, int a) {
