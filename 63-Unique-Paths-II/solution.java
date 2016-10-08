@@ -6,7 +6,7 @@ public class Solution {
         int[][] dp = new int[a][b];
         
         for(int i = 0; i < a; i++) {
-            if(obstacleGrid[i][0] = 0) {
+            if(obstacleGrid[i][0] == 0) {
                 dp[i][0] = 1;
             } else {
                 break;
