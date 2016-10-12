@@ -1,14 +1,24 @@
+//Design Test Cases
+// 1. aa aa  test matched character
+// 2. a. aa  test .
+// 3. a aa 
+// 4. a. a
+// 5. a* a
+// 6. aa aa*
+// 7. ab aa*
+// 8. ba bab*
 public class Solution {
     public boolean isMatch(String s, String p) {
-       if(s.length() == 0 && p.length() == 0) return true;
-       if(s.length() == 0 || p.length() == 0) return false;
+       if(p.length() == 0) {
+           return s.length() == 0;
+       }
        
-       if(p.charAt(1) == '*') {
+       if(p.length() > 1 && p.charAt(1) == '*') {
            if(isMatch(s, p.substring(2))){
                return true;
            }
            
-           if(s.charAt(0) == p.charAt(0) || p.charAt(0) == '.' ) {
+           if(s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
                if(isMatch(s.substring(1), p)) {
                    return true;
                }
@@ -16,7 +26,7 @@ public class Solution {
            
            return false;
        } else {
-           if(s.charAt(0) == p.charAt(0) || p.charAt(0) == '.') {
+           if(s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
                return isMatch(s.substring(1), p.substring(1));
            }
            
